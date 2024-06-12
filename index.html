@@ -1,0 +1,61 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="openSearchWindow()">사이트 검색</button>
+    </div>
+
+    <script>
+        // script.js
+
+// 검색어와 사이트 URL을 매핑하는 객체
+const siteMap = {
+    "네이버": "https://www.naver.com",
+    "구글": "https://www.google.com",
+    "다음": "https://www.daum.net",
+    "웹툰": "https://comic.naver.com/",
+    "카카오 페이지": "https://page.kakao.com/",
+    "유튜브": "https://www.youtube.com",
+    "gpt": "https://chatgpt.com",
+    "퍼즐": "https://edpuzzle.com"
+};
+
+function openSearchWindow() {
+    const searchQuery = prompt("검색어를 입력하세요:");
+
+    if (searchQuery) {
+        const siteURL = siteMap[searchQuery.toLowerCase()];
+        if (siteURL) {
+            window.location.href = siteURL;
+        } else {
+            alert("해당 사이트는 들어갈 수 없는 사이트입니다");
+        }
+    }
+}
+
+    </script>
+</body>
+</html>
