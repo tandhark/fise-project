@@ -1,9 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Site</title>
+    <title>포털찾기</title>
     <style>
       
 html {
@@ -128,38 +128,48 @@ button {
     </style>
 </head>
 <body>
-    <div class="container">
-        <button onclick="openSearchWindow()">사이트 검색</button>
-    </div>
+  <h1>Season 2 of Gloria</h1>
+  <p>원하는 사이트가 있습니까?</p>
+  <div class="container container-one" onclick="openSearchWindow()  ">
+    <button>
+      <b>사이트 검색</b>
+      <div class="fill-one"></div>
+    </button>
+  </div>
+  <p>원하는 질문이 있나요?</p>
+  <a href="https://chatgpt.com/">
+  <div class="container container-two">
+    <button>
+      <b>chat gpt 검색</b>
+      <div class="fill-two"></div>
+    </button>
+  </a>
+  </div>
+
 
     <script>
-        // script.js
+        const siteMap = {
+            "네이버": "https://www.naver.com",
+            "구글": "https://www.google.com",
+            "다음": "https://www.daum.net",
+            "웹툰": "https://comic.naver.com/",
+            "카카오 페이지": "https://page.kakao.com/",
+            "유튜브": "https://www.youtube.com",
+            "1": "https://www.youtube.com",
+            "gpt": "https://chatgpt.com",
+            "퍼즐": "https://edpuzzle.com"
+        };
 
-// 검색어와 사이트 URL을 매핑하는 객체
-const siteMap = {
-    "네이버": "https://www.naver.com",
-    "구글": "https://www.google.com",
-    "다음": "https://www.daum.net",
-    "웹툰": "https://comic.naver.com/",
-    "카카오 페이지": "https://page.kakao.com/",
-    "유튜브": "https://www.youtube.com",
-    "gpt": "https://chatgpt.com",
-    "퍼즐": "https://edpuzzle.com"
-};
-
-function openSearchWindow() {
-    const searchQuery = prompt("검색어를 입력하세요:");
-
-    if (searchQuery) {
-        const siteURL = siteMap[searchQuery.toLowerCase()];
-        if (siteURL) {
-            window.location.href = siteURL;
-        } else {
-            alert("해당 사이트는 들어갈 수 없는 사이트입니다");
-        }
-    }
-}
-
+        function openSearchWindow() {
+            const searchQuery = prompt("사이트를 입력하세요:");
+            
+            if (searchQuery) {
+                const siteURL = siteMap[searchQuery];
+                if (siteURL) {
+                    window.location.href = siteURL;
+                  } else {
+                    alert("해당 사이트는 등록하지 않는 사이트입니다");
+                  }}}
     </script>
 </body>
-</html>
+</html> 
