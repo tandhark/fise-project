@@ -293,20 +293,20 @@
 
 
     window.onkeyup = function (e) {
-        if (e.ctrlKey == true && e.keyCode == 83) { //Ctrl+S 保存
+        if (e.ctrlKey == true && e.keyCode == 83) { //Ctrl+S 스샷
             e.preventDefault();
             e.returnvalue = false;
             saveCanvas();
         }
-        if (e.keyCode == 69) { //E 橡皮擦
+        if (e.keyCode == 69) { //E 지우개
             e.returnvalue = false;
             toolbarEraser.onpointerup();
         }
-        if (e.keyCode == 66) { //B 笔
+        if (e.keyCode == 66) { //B 펜
             e.returnvalue = false;
             toolbarPen.onpointerup();
         }
-        if (e.ctrlKey == true && e.keyCode == 90) { //Ctrl+Z 撤销
+        if (e.ctrlKey == true && e.keyCode == 90) { //Ctrl+Z 실행 취소
             e.returnvalue = false;
             e.preventDefault();
             let content = popHistory();
